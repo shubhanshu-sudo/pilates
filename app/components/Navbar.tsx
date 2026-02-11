@@ -35,36 +35,42 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out flex items-center ${(isScrolled || !isHomepage)
-                ? 'bg-[rgba(246,242,236,0.95)] backdrop-blur-xl py-4 shadow-[0_2px_15px_rgba(0,0,0,0.08)] md:py-4'
-                : 'bg-transparent py-6 md:py-6'
+            {/* Backdrop Layer - Behind Navbar */}
+            <div
+                className={`fixed inset-0 bg-black/60 z-[90] transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}
+                onClick={closeMobileMenu}
+            />
+
+            <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ease-in-out flex items-center ${(isScrolled || !isHomepage || isMobileMenuOpen)
+                    ? 'bg-[#F6F2EC] py-4 shadow-[0_2px_15px_rgba(0,0,0,0.08)]'
+                    : 'bg-transparent py-6'
                 }`}>
-                <div className="max-w-[1200px] w-full mx-auto px-8 lg:px-8 md:px-6 sm:px-5 flex justify-between items-center">
-                    {/* Logo */}
+                <div className="max-w-[1200px] w-full mx-auto px-6 md:px-8 flex justify-between items-center relative">
+                    {/* Logo - Always Visible */}
                     <Link
                         href="/"
-                        className="flex flex-col leading-[1.1] no-underline cursor-pointer group"
+                        className="flex flex-col leading-[1.1] no-underline cursor-pointer group relative z-[110]"
                         onClick={closeMobileMenu}
                     >
-                        <span className={`text-[clamp(1rem,2vw,1.25rem)] font-semibold transition-colors duration-500 ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F]' : 'text-white'
+                        <span className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${(isScrolled || !isHomepage || isMobileMenuOpen) ? 'text-[#2F2F2F]' : 'text-white'
                             }`}>THE PILATES PALMS</span>
-                        <span className={`text-[clamp(0.55rem,1vw,0.65rem)] tracking-[0.6em] font-sans font-normal uppercase mt-1 transition-colors duration-500 ${(isScrolled || !isHomepage) ? 'text-[#A89F92] opacity-80' : 'text-white opacity-90'
+                        <span className={`text-[10px] tracking-[0.6em] font-sans font-normal uppercase mt-1 transition-colors duration-300 ${(isScrolled || !isHomepage || isMobileMenuOpen) ? 'text-[#A89F92]' : 'text-white/90'
                             }`}>PULSE</span>
                     </Link>
 
-                    {/* Desktop Navigation */}
+                    {/* Navigation Container - Modern Sidebar */}
                     <div className={`
-                        hidden md:flex items-center gap-9
-                        max-md:fixed max-md:top-0 max-md:w-[280px] max-md:h-screen 
-                        max-md:bg-[#F6F2EC] max-md:flex-col max-md:justify-start 
-                        max-md:pt-[100px] max-md:px-10 max-md:pb-10 max-md:gap-8 
-                        max-md:shadow-[-5px_0_20px_rgba(0,0,0,0.1)] max-md:z-[100]
-                        max-md:transition-all max-md:duration-[400ms] max-md:ease-[cubic-bezier(0.165,0.84,0.44,1)]
-                        ${isMobileMenuOpen ? 'max-md:right-0' : 'max-md:-right-full'}
+                        fixed top-0 right-0 h-screen w-[300px] bg-[#F6F2EC] shadow-[-20px_0_40px_rgba(0,0,0,0.1)]
+                        flex flex-col items-start justify-start pt-[120px] px-10 gap-8 
+                        transition-transform duration-[400ms] ease-[cubic-bezier(0.2,1,0.3,1)]
+                        z-[105] md:static md:h-auto md:w-auto md:bg-transparent md:shadow-none 
+                        md:flex-row md:items-center md:pt-0 md:px-0 md:gap-9 md:translate-x-0
+                        ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
                     `}>
                         <Link
                             href="/"
-                            className={`text-[0.7rem] md:text-[0.7rem] max-md:text-[0.9rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 relative pb-1 max-md:w-full max-md:text-left max-md:py-3 nav-link ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F] hover:text-[#A89F92]' : 'text-white hover:text-white/80 max-md:text-[#2F2F2F]'
+                            className={`text-[0.9rem] md:text-[0.7rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 w-full md:w-auto ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F]' : 'md:text-white max-md:text-[#2F2F2F]'
                                 }`}
                             onClick={closeMobileMenu}
                         >
@@ -72,7 +78,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                             href="/about"
-                            className={`text-[0.7rem] md:text-[0.7rem] max-md:text-[0.9rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 relative pb-1 max-md:w-full max-md:text-left max-md:py-3 nav-link ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F] hover:text-[#A89F92]' : 'text-white hover:text-white/80 max-md:text-[#2F2F2F]'
+                            className={`text-[0.9rem] md:text-[0.7rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 w-full md:w-auto ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F]' : 'md:text-white max-md:text-[#2F2F2F]'
                                 }`}
                             onClick={closeMobileMenu}
                         >
@@ -80,7 +86,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                             href="/classes"
-                            className={`text-[0.7rem] md:text-[0.7rem] max-md:text-[0.9rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 relative pb-1 max-md:w-full max-md:text-left max-md:py-3 nav-link ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F] hover:text-[#A89F92]' : 'text-white hover:text-white/80 max-md:text-[#2F2F2F]'
+                            className={`text-[0.9rem] md:text-[0.7rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 w-full md:w-auto ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F]' : 'md:text-white max-md:text-[#2F2F2F]'
                                 }`}
                             onClick={closeMobileMenu}
                         >
@@ -88,7 +94,7 @@ export default function Navbar() {
                         </Link>
                         <Link
                             href="/pricing"
-                            className={`text-[0.7rem] md:text-[0.7rem] max-md:text-[0.9rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 relative pb-1 max-md:w-full max-md:text-left max-md:py-3 nav-link ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F] hover:text-[#A89F92]' : 'text-white hover:text-white/80 max-md:text-[#2F2F2F]'
+                            className={`text-[0.9rem] md:text-[0.7rem] tracking-[0.15em] uppercase font-medium transition-colors duration-300 w-full md:w-auto ${(isScrolled || !isHomepage) ? 'text-[#2F2F2F]' : 'md:text-white max-md:text-[#2F2F2F]'
                                 }`}
                             onClick={closeMobileMenu}
                         >
@@ -98,16 +104,16 @@ export default function Navbar() {
                         {/* CTA */}
                         <Link
                             href="/book"
-                            className="inline-block py-3 px-8 md:py-3 md:px-8 rounded-lg bg-[#A89F92] text-white font-medium text-[0.7rem] tracking-[0.1em] uppercase transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:bg-[#928a7e] hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(0,0,0,0.1)] active:translate-y-0 active:scale-[0.98] ml-6 max-md:ml-0 max-md:w-full max-md:mt-4 max-md:text-center"
+                            className="inline-block py-4 px-8 rounded-xl bg-[#A89F92] text-white font-medium text-[0.75rem] tracking-[0.15em] uppercase transition-all duration-300 w-full md:w-auto text-center md:ml-4 active:scale-[0.98]"
                             onClick={closeMobileMenu}
                         >
                             BOOK A SESSION
                         </Link>
                     </div>
 
-                    {/* Mobile Hamburger Toggle */}
+                    {/* Mobile Toggle Button - Guaranteed Visibility */}
                     <button
-                        className={`hidden max-md:block bg-transparent border-none cursor-pointer p-2 z-[101] transition-all duration-300 hover:opacity-70 ${isScrolled ? 'text-[#2F2F2F]' : 'text-white'
+                        className={`md:hidden p-2 relative z-[110] transition-all duration-300 active:scale-90 ${(isScrolled || !isHomepage || isMobileMenuOpen) ? 'text-[#2F2F2F]' : 'text-white'
                             }`}
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         aria-label="Toggle menu"
@@ -118,23 +124,15 @@ export default function Navbar() {
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
                         ) : (
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="3" y1="12" x2="21" y2="12"></line>
-                                <line x1="3" y1="6" x2="21" y2="6"></line>
-                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="4" y1="7" x2="20" y2="7"></line>
+                                <line x1="4" y1="12" x2="20" y2="12"></line>
+                                <line x1="4" y1="17" x2="20" y2="17"></line>
                             </svg>
                         )}
                     </button>
                 </div>
             </nav>
-
-            {/* Mobile Menu Backdrop */}
-            {isMobileMenuOpen && (
-                <div
-                    className="fixed top-0 left-0 w-full h-screen bg-black/50 z-[99] animate-[fadeIn_0.3s_ease]"
-                    onClick={closeMobileMenu}
-                ></div>
-            )}
         </>
     );
 }
