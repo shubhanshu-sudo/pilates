@@ -2,6 +2,9 @@
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ArchSlider from './components/ArchSlider';
+import ClassesSlider from './components/ClassesSlider';
+import TestimonialsSlider from './components/TestimonialsSlider';
 
 export default function Home() {
   return (
@@ -56,15 +59,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Design Showcase - Architectural Sanctuary */}
-      <section className="py-[120px] bg-[#F6F2EC]">
+      {/* Architectural Sanctuary - Responsive Grid + Mobile Slider */}
+      <section className="py-16 md:py-20 lg:py-28 bg-[#F6F2EC]">
         <div className="container">
-          <div className="text-center mb-28 fade-in-reveal">
+          <div className="text-center mb-20 md:mb-24 lg:mb-28 fade-in-reveal">
             <h2 className="text-5xl md:text-6xl text-[#2F2F2F] font-serif mb-6">An Architectural Sanctuary</h2>
             <div className="w-12 h-[2px] bg-[#A89F92] mx-auto opacity-30"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-16 lg:gap-20 max-w-[1200px] mx-auto">
+          {/* Desktop: 3-col grid | Tablet: 2-col grid | Mobile: Horizontal slider */}
+          <div className="
+            hidden md:grid md:grid-cols-2 lg:grid-cols-3 
+            gap-10 lg:gap-12 
+            max-w-6xl mx-auto px-8
+          ">
             {/* Card 1 - Soft Curves */}
             <div className="arch-card fade-in-reveal">
               <div className="aspect-[4/5] rounded-img bg-[#F9F6F1] shadow-[0_20px_40px_rgba(0,0,0,0.03)] overflow-hidden relative group">
@@ -110,49 +118,85 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          <ArchSlider />
         </div>
       </section>
 
-      {/* Classes - Primary Layer */}
-      <section className="section bg-primary-white">
+      {/* Classes - Refined Practice */}
+      <section className="py-20 md:py-28 bg-[#FAF8F5]">
         <div className="container">
           <div className="fade-in-reveal text-center mb-24">
-            <h2 className="text-4xl md:text-5xl mb-6">Refined Practice</h2>
-            <p className="text-taupe uppercase tracking-[0.3em] text-xs font-semibold">Elevate Your Movement</p>
+            <h2 className="text-5xl md:text-7xl font-serif text-[#2F2F2F] mb-6">Refined Practice</h2>
+            <p className="text-[#A89F92] uppercase tracking-[0.4em] text-[10px] md:text-xs font-semibold">Elevate Your Movement</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-16">
+          <div className="hidden md:grid md:grid-cols-3 gap-12 lg:gap-16 max-w-[1200px] mx-auto">
+            {/* Card 1 - Reformer */}
             <div className="fade-in-reveal group text-center">
-              <div className="aspect-[4/5] mb-10 overflow-hidden rounded-img bg-extra-light">
-                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=800" alt="Boutique Reformer Machine" className="w-full h-full object-cover grayscale-[20%] transition-transform duration-1000 group-hover:scale-105" />
+              <div className="aspect-[4/5] mb-10 overflow-hidden rounded-2xl bg-[#F9F6F1] shadow-sm relative">
+                <img
+                  src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=800"
+                  alt="Boutique Reformer Machine"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[0.8]"
+                />
               </div>
-              <h3 className="text-2xl mb-4">Reformer</h3>
-              <p className="text-sm text-brown-grey mb-8 px-4 leading-relaxed line-clamp-2">Controlled resistance for deep stability and elongated strength.</p>
-              <a href="/classes#reformer" className="text-[10px] uppercase tracking-[0.25em] text-taupe font-bold border-b border-taupe/30 pb-2 hover:border-taupe transition-colors">DISCOVER</a>
+              <h3 className="text-3xl font-serif text-[#2F2F2F] mb-6">Reformer</h3>
+              <div className="flex items-start justify-center gap-4 px-4 text-left">
+                <div className="w-10 h-10 rounded-full bg-[#2F2F2F] flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white text-[10px] font-bold">N</span>
+                </div>
+                <p className="text-sm text-[#6E665E] leading-relaxed">Controlled resistance for deep stability and elongated strength.</p>
+              </div>
+              <div className="mt-8">
+                <a href="/classes#reformer" className="text-[10px] uppercase tracking-[0.25em] text-[#A89F92] font-bold border-b border-[#A89F92]/30 pb-2 hover:border-[#A89F92] transition-colors">DISCOVER</a>
+              </div>
             </div>
 
+            {/* Card 2 - Mat */}
             <div className="fade-in-reveal group text-center" style={{ animationDelay: '0.2s' }}>
-              <div className="aspect-[4/5] mb-10 overflow-hidden rounded-img bg-extra-light">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Mat Pilates Practice" className="w-full h-full object-cover grayscale-[20%] transition-transform duration-1000 group-hover:scale-105" />
+              <div className="aspect-[4/5] mb-10 overflow-hidden rounded-2xl bg-[#F9F6F1] shadow-sm relative">
+                <img
+                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
+                  alt="Mat Pilates Practice"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[0.8]"
+                />
               </div>
-              <h3 className="text-2xl mb-4">Mat</h3>
-              <p className="text-sm text-brown-grey mb-8 px-4 leading-relaxed line-clamp-2">Core-centric movement focusing on breath and precision flow.</p>
-              <a href="/classes#mat" className="text-[10px] uppercase tracking-[0.25em] text-taupe font-bold border-b border-taupe/30 pb-2 hover:border-taupe transition-colors">DISCOVER</a>
+              <h3 className="text-3xl font-serif text-[#2F2F2F] mb-6">Mat</h3>
+              <div className="flex items-start justify-center gap-4 px-4 text-left">
+                <div className="w-10 h-10 rounded-full bg-[#2F2F2F] flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white text-[10px] font-bold">N</span>
+                </div>
+                <p className="text-sm text-[#6E665E] leading-relaxed">Core-centric movement focusing on breath and precision flow.</p>
+              </div>
+              <div className="mt-8">
+                <a href="/classes#mat" className="text-[10px] uppercase tracking-[0.25em] text-[#A89F92] font-bold border-b border-[#A89F92]/30 pb-2 hover:border-[#A89F92] transition-colors">DISCOVER</a>
+              </div>
             </div>
 
+            {/* Card 3 - Private */}
             <div className="fade-in-reveal group text-center" style={{ animationDelay: '0.4s' }}>
-              <div className="aspect-[4/5] mb-10 overflow-hidden rounded-img bg-extra-light">
+              <div className="aspect-[4/5] mb-10 overflow-hidden rounded-2xl bg-[#F9F6F1] shadow-sm relative">
                 <img
                   src="/pilates-class-at-hi-pilates-artarmon-australia_1600x.webp"
                   alt="Private Pilates Session"
-                  className="w-full h-full object-cover grayscale-[20%] transition-transform duration-1000 group-hover:scale-105 shadow-sm"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[0.8]"
                 />
               </div>
-              <h3 className="text-2xl mb-4">Private</h3>
-              <p className="text-sm text-brown-grey mb-8 px-4 leading-relaxed line-clamp-2">Tailored sessions designed for your specific anatomical needs.</p>
-              <a href="/classes#private" className="text-[10px] uppercase tracking-[0.25em] text-taupe font-bold border-b border-taupe/30 pb-2 hover:border-taupe transition-colors">DISCOVER</a>
+              <h3 className="text-3xl font-serif text-[#2F2F2F] mb-6">Private</h3>
+              <div className="flex items-start justify-center gap-4 px-4 text-left">
+                <div className="w-10 h-10 rounded-full bg-[#2F2F2F] flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white text-[10px] font-bold">N</span>
+                </div>
+                <p className="text-sm text-[#6E665E] leading-relaxed">Tailored sessions designed for your specific anatomical needs.</p>
+              </div>
+              <div className="mt-8">
+                <a href="/classes#private" className="text-[10px] uppercase tracking-[0.25em] text-[#A89F92] font-bold border-b border-[#A89F92]/30 pb-2 hover:border-[#A89F92] transition-colors">DISCOVER</a>
+              </div>
             </div>
           </div>
+
+          <ClassesSlider />
         </div>
       </section>
 
@@ -182,54 +226,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials - Multi-Voice Editorial */}
-      <section className="section bg-alt-beige">
+      {/* Testimonials - Client Experiences */}
+      <section className="py-24 md:py-32 bg-[#F6F2EC]">
         <div className="container">
-          <div className="fade-in-reveal text-center mb-20">
-            <h2 className="text-4xl md:text-5xl mb-6 serif text-dark-charcoal">Client Experiences</h2>
-            <div className="w-12 h-px bg-taupe mx-auto opacity-30"></div>
+          <div className="fade-in-reveal text-center mb-24">
+            <h2 className="text-5xl md:text-7xl font-serif text-[#2F2F2F] mb-8">Client Experiences</h2>
+            <div className="w-16 h-px bg-[#A89F92] mx-auto opacity-40"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="hidden md:grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
             {/* Testimonial 1 */}
-            <div className="fade-in-reveal premium-card text-center">
-              <div className="mb-8">
-                <span className="text-4xl serif italic text-taupe/20">"</span>
+            <div className="fade-in-reveal premium-card text-center hover:-translate-y-2 transition-transform duration-500">
+              <div className="mb-10">
+                <span className="text-6xl font-serif italic text-[#A89F92]/20">"</span>
               </div>
-              <p className="text-lg italic serif mb-8 text-dark-charcoal leading-relaxed">
+              <p className="text-xl italic font-serif text-[#2F2F2F] leading-[1.8] mb-12 min-h-[160px]">
                 Stepping into The Palms feels like a meditative exhale. The space itself inspires a different kind of movement—precise, intentional, and grounded.
               </p>
-              <div className="w-8 h-px bg-taupe/20 mx-auto mb-6"></div>
-              <h4 className="text-[10px] uppercase tracking-[0.4em] text-taupe font-bold">Elena V.</h4>
-              <p className="text-[9px] uppercase tracking-[0.3em] text-brown-grey mt-2 opacity-60">Studio Member</p>
+              <div className="w-10 h-px bg-[#A89F92]/30 mx-auto mb-8"></div>
+              <h4 className="text-[11px] uppercase tracking-[0.5em] text-[#A89F92] font-semibold">Elena V.</h4>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#6E665E] mt-3 opacity-60">Studio Member</p>
             </div>
 
             {/* Testimonial 2 */}
-            <div className="fade-in-reveal premium-card text-center" style={{ animationDelay: '0.2s' }}>
-              <div className="mb-8">
-                <span className="text-4xl serif italic text-taupe/20">"</span>
+            <div className="fade-in-reveal premium-card text-center hover:-translate-y-2 transition-transform duration-500" style={{ animationDelay: '0.2s' }}>
+              <div className="mb-10">
+                <span className="text-6xl font-serif italic text-[#A89F92]/20">"</span>
               </div>
-              <p className="text-lg italic serif mb-8 text-dark-charcoal leading-relaxed">
+              <p className="text-xl italic font-serif text-[#2F2F2F] leading-[1.8] mb-12 min-h-[160px]">
                 The attention to form and the architectural beauty of the studio create an environment where I can truly focus on my practice. It's transformative.
               </p>
-              <div className="w-8 h-px bg-taupe/20 mx-auto mb-6"></div>
-              <h4 className="text-[10px] uppercase tracking-[0.4em] text-taupe font-bold">Marcus T.</h4>
-              <p className="text-[9px] uppercase tracking-[0.3em] text-brown-grey mt-2 opacity-60">Private Client</p>
+              <div className="w-10 h-px bg-[#A89F92]/30 mx-auto mb-8"></div>
+              <h4 className="text-[11px] uppercase tracking-[0.5em] text-[#A89F92] font-semibold">Marcus T.</h4>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#6E665E] mt-3 opacity-60">Private Client</p>
             </div>
 
             {/* Testimonial 3 */}
-            <div className="fade-in-reveal premium-card text-center" style={{ animationDelay: '0.4s' }}>
-              <div className="mb-8">
-                <span className="text-4xl serif italic text-taupe/20">"</span>
+            <div className="fade-in-reveal premium-card text-center hover:-translate-y-2 transition-transform duration-500" style={{ animationDelay: '0.4s' }}>
+              <div className="mb-10">
+                <span className="text-6xl font-serif italic text-[#A89F92]/20">"</span>
               </div>
-              <p className="text-lg italic serif mb-8 text-dark-charcoal leading-relaxed">
+              <p className="text-xl italic font-serif text-[#2F2F2F] leading-[1.8] mb-12 min-h-[160px]">
                 Every session feels like a reset. The instructors are exceptional, and the space is unlike any other studio I've experienced—calm, refined, intentional.
               </p>
-              <div className="w-8 h-px bg-taupe/20 mx-auto mb-6"></div>
-              <h4 className="text-[10px] uppercase tracking-[0.4em] text-taupe font-bold">Sophia L.</h4>
-              <p className="text-[9px] uppercase tracking-[0.3em] text-brown-grey mt-2 opacity-60">Reformer Regular</p>
+              <div className="w-10 h-px bg-[#A89F92]/30 mx-auto mb-8"></div>
+              <h4 className="text-[11px] uppercase tracking-[0.5em] text-[#A89F92] font-semibold">Sophia L.</h4>
+              <p className="text-[10px] uppercase tracking-[0.4em] text-[#6E665E] mt-3 opacity-60">Reformer Regular</p>
             </div>
           </div>
+
+          <TestimonialsSlider />
         </div>
       </section>
 
