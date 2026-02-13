@@ -8,7 +8,7 @@ export default function Footer() {
                     <div className="md:col-span-2">
                         <Link href="/" className="logo mb-6 inline-block">
                             <span className="font-serif text-2xl font-bold uppercase tracking-widest">The Pilates Palms</span>
-                            <span className="text-[12px] tracking-[0.4em] font-sans text-taupe font-normal uppercase">Pulse</span>
+                            <span className="text-[12px] tracking-[0.4em] font-sans text-taupe font-normal uppercase">AND Pulse</span>
                         </Link>
                         <p className="max-w-md text-muted-brown">
                             A boutique architectural wellness space dedicated to intentional movement and refined strength. Experience Pilates in its most elevated form.
@@ -36,7 +36,7 @@ export default function Footer() {
                 </div>
 
                 <div className="pt-8 border-t border-light-beige flex flex-col md:flex-row justify-between items-center text-xs tracking-widest uppercase text-taupe">
-                    <p>© 2026 THE PILATES PALMS – PULSE. ALL RIGHTS RESERVED.</p>
+                    <p>© 2026 THE PILATES PALMS AND PULSE. ALL RIGHTS RESERVED.</p>
                     <div className="flex gap-8 mt-4 md:mt-0">
                         <Link href="/privacy" className="hover:text-text-charcoal transition-colors">Privacy</Link>
                         <Link href="/terms" className="hover:text-text-charcoal transition-colors">Terms</Link>

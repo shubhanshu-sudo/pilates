@@ -24,7 +24,7 @@ export default function About() {
                         <div className="fade-in-reveal">
                             <h2 className="text-4xl mb-10 leading-tight">The Vision</h2>
                             <p className="mb-8 text-brown-grey leading-relaxed">
-                                Founded on the belief that the environment we move in profoundly shapes our internal state, THE PILATES PALMS – PULSE was conceived as a boutique sanctuary for the modern practitioner.
+                                Founded on the belief that the environment we move in profoundly shapes our internal state, THE PILATES PALMS AND PULSE was conceived as a boutique sanctuary for the modern practitioner.
                             </p>
                             <p className="mb-8 text-brown-grey leading-relaxed">
                                 We stripped away the clinical atmosphere of traditional studios, replacing it with soft architectural curves, natural textures, and a flood of natural light. The result is a space that feels like a quiet exhale—an invitation to slow down and move with precision.

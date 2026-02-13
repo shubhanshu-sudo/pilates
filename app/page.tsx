@@ -48,7 +48,7 @@ export default function Home() {
             <div className="fade-in-reveal">
               <h2 className="text-4xl md:text-5xl mb-10 leading-tight">The Pulse of Wellness</h2>
               <p className="mb-8 text-brown-grey max-w-body">
-                THE PILATES PALMS – PULSE is an architectural breathing space designed to elevate your movement practice through refined methodology.
+                THE PILATES PALMS AND PULSE is an architectural breathing space designed to elevate your movement practice through refined methodology.
               </p>
               <p className="mb-12 text-brown-grey max-w-body">
                 We focus on the intersection of form, flow, and focus, providing an environment that honors the body’s natural intelligence.

@@ -71,7 +71,7 @@ export default function Contact() {
             <section className="h-[500px] w-full bg-light-beige relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000" alt="Map Location" className="w-full h-full object-cover opacity-50 grayscale" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white px-8 py-4 rounded-full shadow-lg text-sm tracking-widest uppercase font-bold">The Palms — Pulse</div>
+                    <div className="bg-white px-8 py-4 rounded-full shadow-lg text-sm tracking-widest uppercase font-bold">THE PILATES PALMS AND PULSE</div>
                 </div>
             </section>
 

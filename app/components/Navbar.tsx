@@ -43,8 +43,8 @@ export default function Navbar() {
             />
 
             <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ease-in-out flex items-center ${(isScrolled || !isHomepage || isMobileMenuOpen)
-                    ? 'bg-[#F6F2EC] py-4 shadow-[0_2px_15px_rgba(0,0,0,0.08)]'
-                    : 'bg-transparent py-6'
+                ? 'bg-[#F6F2EC] py-4 shadow-[0_2px_15px_rgba(0,0,0,0.08)]'
+                : 'bg-transparent py-6'
                 }`}>
                 <div className="max-w-[1200px] w-full mx-auto px-6 md:px-8 flex justify-between items-center relative">
                     {/* Logo - Always Visible */}
@@ -56,7 +56,7 @@ export default function Navbar() {
                         <span className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${(isScrolled || !isHomepage || isMobileMenuOpen) ? 'text-[#2F2F2F]' : 'text-white'
                             }`}>THE PILATES PALMS</span>
                         <span className={`text-[10px] tracking-[0.6em] font-sans font-normal uppercase mt-1 transition-colors duration-300 ${(isScrolled || !isHomepage || isMobileMenuOpen) ? 'text-[#A89F92]' : 'text-white/90'
-                            }`}>PULSE</span>
+                            }`}>AND PULSE</span>
                     </Link>
 
                     {/* Navigation Container - Modern Sidebar */}
